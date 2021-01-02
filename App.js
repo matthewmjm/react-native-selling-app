@@ -9,7 +9,7 @@ import AppButton from './src/components/AppButton';
 
 const App = () => {
   return (
-    <ViewImageScreen />
+    <WelcomeScreen />
   )
 }
 
