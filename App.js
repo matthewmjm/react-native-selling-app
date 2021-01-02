@@ -7,16 +7,9 @@ import AppText from './src/components/AppText/AppText';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AppButton from './src/components/AppButton';
 
-export default function App() {
+const App = () => {
   return (
-    <View style={styles.container}>
-      <AppText>I love React Native</AppText>
-      <AppButton 
-        title="Login"
-        onPress={() => console.log("Tapped")}
-      ></AppButton>
-    </View>
-
+    <ViewImageScreen />
   )
 }
 
@@ -24,7 +17,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
+    flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
 });
+
+export default App;

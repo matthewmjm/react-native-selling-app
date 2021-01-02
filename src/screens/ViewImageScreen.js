@@ -7,11 +7,11 @@ const ViewImageScreen = (props) => {
         <View style={styles.container}>
             <View style={styles.closeIcon}></View>
             <View style={styles.deleteIcon}></View>
-                <Image 
-                    source={require('../assets/chair.jpg')} 
-                    style={styles.image} 
-                    resizeMode='contain' 
-                />
+            <Image 
+                source={require('../assets/chair.jpg')} 
+                style={styles.image} 
+                resizeMode='contain' 
+            />
         </View>
     );
 };
