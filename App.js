@@ -1,13 +1,22 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, SafeAreaView } from 'react-native';
 import WelcomeScreen from './src/screens/WelcomeScreen';
 import ViewImageScreen from './src/screens/ViewImageScreen';
+import AppText from './src/components/AppText/AppText';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import AppButton from './src/components/AppButton';
 
 export default function App() {
   return (
-    // <WelcomeScreen />
-    <ViewImageScreen />
+    <View style={styles.container}>
+      <AppText>I love React Native</AppText>
+      <AppButton 
+        title="Login"
+        onPress={() => console.log("Tapped")}
+      ></AppButton>
+    </View>
+
   )
 }
 
