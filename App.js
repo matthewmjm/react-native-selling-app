@@ -11,15 +11,15 @@ import ListingDetailsScreen from './src/screens/ListingDetailsScreen';
 import MessagesScreen from './src/screens/MessagesScreen';
 import Screen from './src/components/Screen';
 import Icon from './src/components/Icon';
+import ListItem from './src/components/ListItem';
 
 const App = () => {
   return (
     <Screen>
-      <Icon 
-        name="email"
-        size={50}
-        backgroundColor="red"
-        iconColor="white"
+      <ListItem 
+        title="My Title" 
+        subTitle="My Subtitle" 
+        ImageComponent={<Icon name='email' />}
       />
     </Screen>
   )
