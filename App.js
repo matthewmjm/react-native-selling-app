@@ -11,7 +11,7 @@ import ListingDetailsScreen from './src/screens/ListingDetailsScreen';
 
 const App = () => {
   return (
-    <ListingDetailsScreen />
+    <ViewImageScreen />
   )
 }
 
