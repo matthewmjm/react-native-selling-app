@@ -12,16 +12,11 @@ import MessagesScreen from './src/screens/MessagesScreen';
 import Screen from './src/components/Screen';
 import Icon from './src/components/Icon';
 import ListItem from './src/components/ListItem';
+import AccountScreen from './src/screens/AccountScreen';
 
 const App = () => {
   return (
-    <Screen>
-      <ListItem 
-        title="My Title" 
-        subTitle="My Subtitle" 
-        ImageComponent={<Icon name='email' />}
-      />
-    </Screen>
+    <AccountScreen />
   )
 }
 
