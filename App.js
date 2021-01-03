@@ -8,10 +8,11 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import AppButton from './src/components/AppButton';
 import Card from './src/components/Card';
 import ListingDetailsScreen from './src/screens/ListingDetailsScreen';
+import MessagesScreen from './src/screens/MessagesScreen';
 
 const App = () => {
   return (
-    <ViewImageScreen />
+    <MessagesScreen />
   )
 }
 
