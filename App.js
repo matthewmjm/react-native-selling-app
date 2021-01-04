@@ -17,6 +17,7 @@ import ListingsScreen from './src/screens/ListingsScreen';
 import AppTextInput from './src/components/AppTextInput';
 import AppPicker from './src/components/AppPicker';
 import LoginScreen from './src/screens/LoginScreen';
+import ListingEditScreen from './src/screens/ListingEditScreen';
 
 
 const categories = [
@@ -32,7 +33,7 @@ const App = () => {
   const [category, setCategory] = useState(categories[0])
 
   return (
-    <LoginScreen />
+    <ListingEditScreen />
   )
 }
 
