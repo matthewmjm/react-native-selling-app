@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableHighlight } from 'react-native';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
-import AppText from './AppText/AppText';
+import AppText from './AppText';
 import colors from '../config/colors';
 
 const ListItem = ({ title, subTitle, image, IconComponent, onPress, renderRightActions }) => {
