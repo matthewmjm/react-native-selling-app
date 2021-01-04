@@ -18,13 +18,20 @@ import AppTextInput from './src/components/AppTextInput';
 import AppPicker from './src/components/AppPicker';
 
 
+const categories = [
+  { label: "Furniture", value: 1 },
+  { label: "Clothing", value: 2 },
+  { label: "Cameras", value: 3 },
+];
+
+
 const App = () => {
   const [firstName, setFirstName] = useState('');
   const [isNew, setIsNew] = useState(false);
 
   return (
     <Screen>
-      <AppPicker icon="apps" placeholder="Category" />
+      <AppPicker icon="apps" placeholder="Category" items={categories} />
       <AppTextInput icon="email" placeholder="Email" />
     </Screen>
   )
