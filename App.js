@@ -16,6 +16,7 @@ import AccountScreen from './src/screens/AccountScreen';
 import ListingsScreen from './src/screens/ListingsScreen';
 import AppTextInput from './src/components/AppTextInput';
 import AppPicker from './src/components/AppPicker';
+import LoginScreen from './src/screens/LoginScreen';
 
 
 const categories = [
@@ -28,12 +29,10 @@ const categories = [
 const App = () => {
   const [firstName, setFirstName] = useState('');
   const [isNew, setIsNew] = useState(false);
+  const [category, setCategory] = useState(categories[0])
 
   return (
-    <Screen>
-      <AppPicker icon="apps" placeholder="Category" items={categories} />
-      <AppTextInput icon="email" placeholder="Email" />
-    </Screen>
+    <LoginScreen />
   )
 }
 
