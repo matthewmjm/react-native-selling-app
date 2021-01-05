@@ -1,21 +1,19 @@
 import React, { useState } from 'react'
-import { View, Text, StyleSheet, FlatList } from 'react-native';
-import ListItem from '../components/ListItem';
-import ListItemDeleteAction from '../components/ListItemDeleteAction';
-import ListItemSeparator from '../components/ListItemSeparator';
+import { FlatList } from 'react-native';
+import { ListItem, ListItemDeleteAction, ListItemSeparator } from '../components/lists';
 import Screen from '../components/Screen';
 
 const initialMessages = [
     {
         id: 1,
-        title: 'T1',
-        description: 'D1',
+        title: 'Matthew Malecki',
+        description: 'Hey! Is this item still available?',
         image: require('../assets/matthewmjm.jpg')
     },
     {
         id: 2,
-        title: 'T2',
-        description: 'D2',
+        title: 'Matthew Malecki',
+        description: "I'm interested in this item. When will you be able to post it?",
         image: require('../assets/matthewmjm.jpg')
     },
 ]
@@ -27,7 +25,7 @@ const MessagesScreen = (props) => {
 
     const handleDelete = message => {
         // Delete message from messages array
-        const newMessages = messages.filter(m => m.id !== message.id);
+        const newMessages = messages.filter((m) => m.id !== message.id);
         setMessages(newMessages);
 
         // Delete message from the server (which we will do later)
@@ -36,7 +34,7 @@ const MessagesScreen = (props) => {
         <Screen>
             <FlatList 
                 data={messages}
-                keyExtractor={message => message.id.toString()}
+                keyExtractor={(message) => message.id.toString()}
                 renderItem={({ item }) => (
                     <ListItem
                         title={item.title}
@@ -54,8 +52,8 @@ const MessagesScreen = (props) => {
                     setMessages([
                         {
                             id: 2,
-                            title: 'T2',
-                            description: 'D2',
+                            title: 'Matthew Malecki',
+                            description: "I'm interested in this item. When will you be able to post it?",
                             image: require('../assets/matthewmjm.jpg')
                         },
                     ])
@@ -65,7 +63,5 @@ const MessagesScreen = (props) => {
     );
 };
 
-const styles = StyleSheet.create({
-})
 
 export default MessagesScreen;

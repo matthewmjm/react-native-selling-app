@@ -1,14 +1,14 @@
 import React from 'react';
-import { View, Image, StyleSheet, Text } from 'react-native';
+import { View, Image, StyleSheet } from 'react-native';
 import AppText from '../components/AppText'
 import colors from '../config/colors';
-import ListItem from '../components/ListItem';
+import ListItem from '../components/lists/ListItem';
 
 const ListingDetailsScreen = (props) => {
     return ( 
-        <View style={styles.detailsContainer}>
+        <View>
             <Image style={styles.image} source={require('../assets/jacket.jpg')} />
-            <View>
+            <View style={styles.detailsContainer}>
                 <AppText style={styles.title}>Red Jacket For Sale</AppText>
                 <AppText style={styles.price}>$100</AppText>
                 <View style={styles.userContainer}>
@@ -17,7 +17,7 @@ const ListingDetailsScreen = (props) => {
                         title="Matthew Malecki"
                         subTitle="5 Listings"
                     />
-                </View>
+                </View> 
             </View>
         </View>
     );

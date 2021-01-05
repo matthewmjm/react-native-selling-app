@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     }, 
     view: {
         flex: 1
-    }
-})
+    },
+});
 
 export default Screen;

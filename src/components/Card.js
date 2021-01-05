@@ -8,12 +8,12 @@ const Card = ({ title, subTitle, image }) => {
         <View style={styles.card}>
             <Image style={styles.image} source={image} />
             <View style={styles.detailsContainer}>
-                <AppText style={styles.title}>{title}</AppText>
-                <AppText style={styles.subtitle}>{subTitle}</AppText>
+                <AppText style={styles.title} numberOfLines={1}>{title}</AppText>
+                <AppText style={styles.subTitle} numberOfLines={2} >{subTitle}</AppText>
             </View>
         </View>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     card: {
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: 200,
     },
-    subtitle: {
+    subTitle: {
         color: colors.secondary,
         fontWeight: 'bold',
     },

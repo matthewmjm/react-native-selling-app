@@ -1,12 +1,12 @@
 import React from 'react'
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const Icon = ({
     name,
     size = 40,
     backgroundColor = "#000000",
-    iconColor = "#dddddd",
+    iconColor = "#ffffff",
 }) => {
     return (
         <View style={{
@@ -25,9 +25,5 @@ const Icon = ({
         </View>
     );
 };
-
-const styles = StyleSheet.create({
-    
-});
 
 export default Icon;

@@ -7,29 +7,38 @@ import Screen from './Screen';
 import PickerItem from './PickerItem';
 import defaultStyles from '../config/styles'
 
-const AppPicker = ({ icon, items, onSelectItem, placeholder, selectedItem, width="100%" }) => {
+const Picker = ({ 
+    icon, 
+    items, 
+    numberOfColumns = 1,
+    onSelectItem, 
+    PickerItemComponent = PickerItem,
+    placeholder, 
+    selectedItem, 
+    width="100%" 
+}) => {
     const [modalVisible, setModalVisible] = useState(false)
     return (
         <React.Fragment>
             <TouchableWithoutFeedback onPress={() => setModalVisible(true)}>
-                <View style={[styles.container, {width}]}>
+                <View style={[styles.container, { width }]}>
                     {icon && (
                         <MaterialCommunityIcons 
                             name={icon} 
                             size={20} 
-                            color={colors.medium} 
+                            color={defaultStyles.colors.medium} 
                             style={styles.icon}
                         />
                     )}
                     { selectedItem ? (
-                        <AppText style={styles.text}>{selectedItem.Item.label}</AppText>
+                        <AppText style={styles.text}>{selectedItem.label}</AppText>
                     ) : (
                         <AppText style={styles.placeholder}>{placeholder}</AppText>
                     )}
                     <MaterialCommunityIcons 
                             name="chevron-down"
                             size={20} 
-                            color={colors.medium} 
+                            color={defaultStyles.colors.medium} 
                         />
                 </View>
             </TouchableWithoutFeedback>
@@ -39,14 +48,17 @@ const AppPicker = ({ icon, items, onSelectItem, placeholder, selectedItem, width
                     <FlatList 
                         data={items}
                         keyExtractor={item => item.value.toString()}
-                        renderItem={({ item }) => 
-                            <PickerItem 
+                        numColumns={numberOfColumns}
+                        renderItem={({ item }) => (
+                            <PickerItemComponent
+                                item={item}
                                 label={item.label}
                                 onPress={() => {
                                     setModalVisible(false);
                                     onSelectItem(item);
                                 }}
-                            />}
+                            />
+                        )}
                     />
                 </Screen>
             </Modal>
@@ -56,7 +68,7 @@ const AppPicker = ({ icon, items, onSelectItem, placeholder, selectedItem, width
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: colors.light,
+        backgroundColor: defaultStyles.colors.light,
         borderRadius: 25,
         flexDirection: "row",
         padding: 15,
@@ -74,4 +86,4 @@ const styles = StyleSheet.create({
     }
 });
 
-export default AppPicker;
+export default Picker;
