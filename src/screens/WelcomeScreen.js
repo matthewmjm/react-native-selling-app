@@ -17,12 +17,12 @@ const WelcomeScreen = ({ navigation }) => {
             <View style={styles.buttonsContainer}>
                 <AppButton 
                     title="login" 
-                    onPress={() => navigation.navigate('Login')} 
+                    onPress={() => navigation.navigate(routes.LOGIN)} 
                 />
                 <AppButton 
                     title="register" 
                     color="secondary" 
-                    onPress={() => navigation.navigate('Register')}  
+                    onPress={() => navigation.navigate(routes.REGISTER)}  
                 />
             </View>
         </ImageBackground>
