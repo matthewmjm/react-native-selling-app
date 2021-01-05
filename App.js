@@ -21,29 +21,11 @@ import ListingEditScreen from './src/screens/ListingEditScreen';
 import * as ImagePicker from 'expo-image-picker';
 
 
-// const categories = [
-//   { label: "Furniture", value: 1 },
-//   { label: "Clothing", value: 2 },
-//   { label: "Cameras", value: 3 },
-// ];
-
 
 const App = () => {
-  // const [firstName, setFirstName] = useState('');
-  // const [isNew, setIsNew] = useState(false);
-  // const [category, setCategory] = useState(categories[0])
-  const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestCameraPermissionsAsync();
-    if (!granted)
-      alert("You need to enable permission to access the library")
-
-  }
-  useEffect(() => {
-    requestPermission()
-  }, [])
 
   return (
-    <Screen></Screen>
+    <ListingEditScreen />
   )
 }
 
