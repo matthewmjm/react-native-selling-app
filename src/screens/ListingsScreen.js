@@ -9,26 +9,29 @@ import routes from '../navigation/routes';
 import Screen from '../components/Screen';
 import AppButton from '../components/AppButton';
 import ActivityIndicator from '../components/ActivityIndicator';
+import useApi from '../hooks/useApi';
 
 const ListingsScreen = ({ navigation }) => {
 
+    const {data: listings, error, loading, request: loadListings} = useApi(listingsApi.getListings);
+
     // FETCH FOR LISTINGS ON BACKEND SERVER
-    const [ listings, setListings ] = useState([]);
-    const [ error, setError ] = useState(false);
-    const [ loading, setLoading ] = useState(false) 
+    // const [ listings, setListings ] = useState([]);
+    // const [ error, setError ] = useState(false);
+    // const [ loading, setLoading ] = useState(false) 
     useEffect(() => {
         loadListings();
     }, []);
-    const loadListings = async () => {
-        setLoading(true);
-        const response = await listingsApi.getListings();
-        setLoading(false)
+    // const loadListings = async () => {
+    //     setLoading(true);
+    //     const response = await listingsApi.getListings();
+    //     setLoading(false)
 
-        if (!response.ok) return setError(true);
+    //     if (!response.ok) return setError(true);
 
-        setError(false);
-        setListings(response.data);
-    };
+    //     setError(false);
+    //     setListings(response.data);
+    // };
 
 
 
