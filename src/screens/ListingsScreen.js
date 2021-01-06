@@ -8,18 +8,24 @@ import listingsApi from '../api/listings';
 import routes from '../navigation/routes';
 import Screen from '../components/Screen';
 import AppButton from '../components/AppButton';
+import ActivityIndicator from '../components/ActivityIndicator';
 
 const ListingsScreen = ({ navigation }) => {
 
     // FETCH FOR LISTINGS ON BACKEND SERVER
     const [ listings, setListings ] = useState([]);
     const [ error, setError ] = useState(false);
+    const [ loading, setLoading ] = useState(false) 
     useEffect(() => {
         loadListings();
     }, []);
     const loadListings = async () => {
+        setLoading(true);
         const response = await listingsApi.getListings();
+        setLoading(false)
+
         if (!response.ok) return setError(true);
+
         setError(false);
         setListings(response.data);
     };
@@ -32,6 +38,7 @@ const ListingsScreen = ({ navigation }) => {
             <AppText style={{ color: 'red' }}>Couldn't Retrieve the Listings</AppText>
             <AppButton title="Retry" onPress={loadListings} />
             </>}
+            <ActivityIndicator visible={loading} />
             <FlatList 
                 data={listings}
                 keyExtractor={listing => listing.id.toString()}
